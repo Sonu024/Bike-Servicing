@@ -20,50 +20,39 @@
 
 
 //form
-// Show booking modal on 'Book Now' button click
-document.querySelectorAll("button").forEach(btn => {
-  if (btn.textContent.includes("Book Now")) {
-    btn.addEventListener("click", () => {
-      const modal = document.getElementById("bookingModal");
-      if (modal) {
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-      }
-    });
-  }
-});
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-// Close modal function
-function closeModal() {
-  const modal = document.getElementById("bookingModal");
-  if (modal) {
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-  }
-}
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const time = document.getElementById("time").value.trim();
+    const brand = document.getElementById("brand").value.trim();
+    const problem = document.getElementById("problem").value.trim();
 
-// Prevent letters and limit to 10 digits only
-const contactInput = document.getElementById("contactNumber");
-if (contactInput) {
-  contactInput.addEventListener("input", function () {
-    this.value = this.value.replace(/\D/g, "").slice(0, 10);
-  });
-}
-
-// Booking form validation on submit
-const bookingForm = document.getElementById("bookingForm");
-if (bookingForm) {
-  bookingForm.addEventListener("submit", function (e) {
-    const phoneNumber = contactInput.value.trim();
-    const phoneRegex = /^\d{10}$/;
-
-    if (!phoneRegex.test(phoneNumber)) {
-      e.preventDefault();
-      alert("Contact number must be exactly 10 digits and contain digits only.");
-      contactInput.focus();
+    if (!name || !email || !contact || !time || !brand || !problem) {
+      alert("Please fill out all fields correctly.");
+      return;
     }
+
+    // Show confirmation popup and disable scroll
+    document.getElementById("confirmationPopup").classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+
+    // Reset the form
+    document.getElementById("bookingForm").reset();
   });
-}
+
+  document.getElementById("confirmOkBtn").addEventListener("click", function() {
+    document.getElementById("confirmationPopup").classList.add("hidden");
+    document.body.style.overflow = ""; // Re-enable scroll
+    // Do not scroll to top or redirect
+  });
+
+
+
+
+
 
 
 

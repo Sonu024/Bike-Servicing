@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,7 +64,7 @@
     scale: 1;
   }
 }
-.block{
+.block-div{
   animation: appear 5s linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
@@ -85,7 +85,6 @@
   <div class="max-w-screen-2xl mx-auto flex justify-between items-center">
     <a href="#" class="text-xl font-bold">Bhanu Motorcycle Workshop</a>
 
-    <!-- Nav Links (visible from md and above) -->
     <div class="hidden md:flex space-x-10">
       <a href="#" class="text-lg font-semibold hover:text-gray-300">Home</a>
       <a href="#services" class="text-lg font-semibold hover:text-gray-300">Services</a>
@@ -93,7 +92,6 @@
       <a href="#" class="text-lg font-semibold hover:text-gray-300">Contact Us</a>
     </div>
 
-    <!-- Hamburger Menu (only visible on small screens) -->
     <button id="menu-toggle" class="md:hidden focus:outline-none">
       <i class="fas fa-bars text-2xl"></i>
     </button>
@@ -113,13 +111,13 @@
 </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-blue-900 text-white flex items-center justify-center text-center h-[100vh]">
-      <div class="absolute inset-0">
-        <img src="images/background.webp" alt="Bike service background" class="w-full h-full object-cover opacity-90" />
+    <section class="relative bg-blue-900 text-white flex items-center justify-center  text-center h-[700px] sm:h-[100vh]">
+      <div class="absolute inset-0 ">
+        <img src="images/background.webp" alt="Bike service background" class="w-full h-full  object-cover object-center opacity-90" />
       </div>
       <div class="relative z-10 px-6 xl:px-0 max-w-4xl">
-        <h1 class="text-6xl font-bold mb-4 leading-tight slide-in">Bhanu Motocycle Recondition & Marmat Center</h1>
-        <p class="text-2xl text-[#fbff00] font-semibold">Your Trusted Bike Partner in Nepal</p>
+        <h1 class="text-3xl sm:text-6xl font-bold mb-4 leading-tight slide-in">Bhanu Motocycle Recondition & Marmat Center</h1>
+        <p class="text-xl sm:text-2xl text-[#fbff00] font-semibold">Your Trusted Bike Partner in Nepal</p>
       </div>
     </section>
 
@@ -127,18 +125,18 @@
     <section id="services" class="py-24 bg-blue-50 px-10 xl:px-0">
       <div class="max-w-screen-2xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16 animate-fade-up">🔧 Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
-          <div class="bg-white rounded-lg shadow-xl p-8 text-center animate-fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12  px-4 sm:px-6 lg:px-16">
+          <div class="bg-white rounded-lg shadow-xl p-8 text-center animate-fade-up block-div">
             <img src="images/enginechecking.jpg" alt="Engine" class="h-[250px] w-[250px] object-cover mx-auto mb-6" />
             <h3 class="font-semibold text-2xl mb-3">Engine Diagnostics</h3>
             <p>Advanced testing tools for precise engine fault detection.</p>
           </div>
-          <div class="bg-white rounded-lg shadow-xl p-8 text-center animate-fade-up">
+          <div class="bg-white rounded-lg shadow-xl p-8 text-center animate-fade-up block-div">
             <img src="images/brake.webp" alt="Brakes" class="h-[250px] w-[250px] object-cover mx-auto mb-6" />
             <h3 class="font-semibold text-2xl mb-3">Brake Inspection</h3>
             <p>Safe and reliable brake repair and pad replacements.</p>
           </div>
-          <div class="bg-white rounded-lg shadow-xl p-8 text-center animate-fade-up">
+          <div class="bg-white rounded-lg shadow-xl p-8 text-center animate-fade-up block-div">
             <img src="images/washing.jpeg" alt="Wash" class="h-[250px] w-[250px] object-cover mx-auto mb-6" />
             <h3 class="font-semibold text-2xl mb-3">Bike Wash</h3>
             <p>Keep your bike spotless with our detailing and polish service.</p>
@@ -154,29 +152,29 @@
 
 <!-- Workshop Gallery Section -->
 <section id="gallery" class="py-24 bg-gray-50">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 text-center">
+  <div class="max-w-screen-xl mx-auto  px-4 sm:px-6 lg:px-16 text-center">
     <h2 class="text-4xl font-bold mb-8 animate-fade-up">Our Workshop Gallery</h2>
     <p class="text-gray-600 mb-12 text-lg animate-fade-up">Glimpses of our workspace, services, and happy riders.</p>
 
     <!-- First Row: 2 images -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-      <div class="block overflow-hidden rounded-xl shadow-md animate-fade-up">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 ">
+      <div class="block-div overflow-hidden rounded-xl shadow-md animate-fade-up">
         <img src="images/img10.jpg" class="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300">
       </div>
-      <div class="block overflow-hidden rounded-xl shadow-md animate-fade-up">
+      <div class="block-div overflow-hidden rounded-xl shadow-md animate-fade-up">
         <img src="images/img2.jpg" class="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300">
       </div>
     </div>
 
     <!-- Second Row: 3 images -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-      <div class="block overflow-hidden rounded-xl shadow-md animate-fade-up">
+      <div class="block-div overflow-hidden rounded-xl shadow-md animate-fade-up">
         <img src="images/img9.jpg" class="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300">
       </div>
-      <div class="block overflow-hidden rounded-xl shadow-md animate-fade-up">
+      <div class="block-div overflow-hidden rounded-xl shadow-md animate-fade-up">
         <img src="images/img11.jpg" class="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300">
       </div>
-      <div class="block overflow-hidden rounded-xl shadow-md animate-fade-up">
+      <div class="block-div overflow-hidden rounded-xl shadow-md animate-fade-up">
         <img src="images/img8.jpg" class="w-full h-[350px] object-cover hover:scale-105 transition-transform duration-300">
       </div>
     </div>
@@ -204,25 +202,25 @@
 
     <!-- Features Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 animate-fade-up">
-      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block">
+      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block-div">
         <img src="https://cdn-icons-png.flaticon.com/512/2942/2942623.png" alt="Expert Mechanics" class="w-14 h-14 mb-4 mx-auto">
         <h3 class="text-lg font-semibold text-gray-800 mb-1">Expert Mechanics</h3>
         <p class="text-sm text-gray-600">Years of experience and certified skills ensure precise bike care.</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block">
+      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block-div ">
         <img src="https://cdn-icons-png.flaticon.com/512/1076/1076928.png" alt="Genuine Parts" class="w-14 h-14 mb-4 mx-auto">
         <h3 class="text-lg font-semibold text-gray-800 mb-1">Genuine Parts</h3>
         <p class="text-sm text-gray-600">We only use trusted and original parts from certified suppliers.</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block">
+      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block-div">
         <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Quick Turnaround" class="w-14 h-14 mb-4 mx-auto">
         <h3 class="text-lg font-semibold text-gray-800 mb-1">Quick Turnaround</h3>
         <p class="text-sm text-gray-600">Your bike back on the road — same day for most services.</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block">
+      <div class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition text-center block-div">
         <img src="https://cdn-icons-png.flaticon.com/512/929/929479.png" alt="Customer Support" class="w-14 h-14 mb-4 mx-auto">
         <h3 class="text-lg font-semibold text-gray-800 mb-1">Friendly Support</h3>
         <p class="text-sm text-gray-600">We guide you clearly, honestly, and patiently at every step.</p>
@@ -236,12 +234,11 @@
   <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-start animate-fade-up">
 
     <!-- Map Embed -->
-    <!-- Map Embed -->
 <div class="lg:col-span-2 space-y-6">
   <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center lg:text-left">
     Visit Us at Kamalnagar(Chautari Road), Chitwan
   </h2>
-  <div class="w-full h-64 sm:h-80 lg:h-[500px]">
+  <div class="w-full h-64 sm:h-80 lg:h-[500px]  block-div">
     <iframe src="https://www.google.com/maps/embed?..." 
             class="w-full h-full rounded-lg shadow-md border-0" 
             allowfullscreen="" 
@@ -251,17 +248,29 @@
 
 
     <!-- Booking Form -->
-    <div class="bg-gray-200 rounded-xl shadow-lg p-6 sm:p-8 w-full animate-fade-up block">
+ <!-- Confirmation Popup -->
+  <div id="confirmationPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+    <h2 class="text-xl font-semibold mb-4">Appointment Confirmed!</h2>
+    <p class="mb-4">Thank you for choosing Bhanu's MotorBike Service Centre.We'll get in touch with you shortly.</p>
+    <button id="confirmOkBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">OK</button>
+  </div>
+  </div>
+
+   <div class="bg-gray-200 rounded-xl shadow-lg px-6 py-4 sm:p-8 w-full animate-fade-up ">
       <h2 class="text-2xl font-bold mb-6 text-center">Book Service</h2>
-      <form action="success.html" method="GET" class="space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded focus:outline-none" required>
-        <input type="email" placeholder="Email Address" class="w-full p-3 border rounded focus:outline-none" required>
-        <input type="tel" placeholder="Contact Number" class="w-full p-3 border rounded focus:outline-none" pattern="\d{10}" required>
-        <input type="text" placeholder="Preferred Time" class="w-full p-3 border rounded focus:outline-none" required>
-        <input type="text" placeholder="Motorbike Brand" class="w-full p-3 border rounded focus:outline-none" required>
-        <textarea placeholder="Problem Description" class="w-full p-3 border rounded focus:outline-none" rows="3" required></textarea>
-        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-800 transition font-semibold">Book Now</button>
-      </form>
+  <form id="bookingForm" class="space-y-4">
+  <input type="text" id="name" placeholder="Your Name" class="w-full p-3 border rounded focus:outline-none" required>
+  <input type="email" id="email" placeholder="Email Address" class="w-full p-3 border rounded focus:outline-none" required>
+  <input type="tel" id="contact" placeholder="Contact Number" class="w-full p-3 border rounded focus:outline-none" pattern="\d{10}" required>
+  <input type="text" id="time" placeholder="Preferred Time" class="w-full p-3 border rounded focus:outline-none" required>
+  <input type="text" id="brand" placeholder="Motorbike Brand" class="w-full p-3 border rounded focus:outline-none" required>
+  <textarea id="problem" placeholder="Problem Description" class="w-full p-3 border rounded focus:outline-none" rows="3" required></textarea>
+  <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-800 transition font-semibold">Book Now</button>
+</form>
+
+
+
     </div>
   </div>
 </section>
@@ -307,7 +316,7 @@
 
     <!-- Copyright -->
     <div class="border-t border-gray-400 mt-8 pt-4 text-center">
-      <p class="text-sm text-gray-200">&copy; 2025 Ranu’s Bike Service Centre. All rights reserved.</p>
+      <p class="text-sm text-gray-200">copyright &copy; 2025 Ranu’s Bike Service Centre. All rights reserved.</p>
     </div>
   </div>
 </footer>
