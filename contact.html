@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Bhanu Bike Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+   
+    #content {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    #content.visible {
+      opacity: 1;
+    }
+    .visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    /* Disabled button style */
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Loading Bar -->
+  <div id="loading-bar" class="fixed top-0 left-0 h-0.5 bg-red-500 z-50" style="width: 0%;"></div>
+  <div id="content">
+    <!-- navbar -->
+    <nav class="bg-blue-900 text-black p-4 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="text-md text-white font-bold">Bhanu Motorcycle Workshop</a>
+
+        <!-- Hamburger button - visible on small screens -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+
+        <!-- Desktop menu -->
+        <div id="menu" class="space-x-6 hidden md:flex">
+          <a href="#" class="text-white text-xl font-semibold hover:text-gray-300">Home</a>
+          <a href="#services" class="text-white text-xl font-semibold hover:text-gray-300">Services</a>
+          <a href="#gallery" class="text-white text-xl font-semibold hover:text-gray-300">Gallery</a>
+          <a href="#contact" class="text-white text-xl font-semibold hover:text-gray-300">Contact us</a>
+        </div>
+      </div>
+    </nav>
+
+  <!-- Mobile Menu - Appears lower from navbar -->
+<div id="mobile-menu" class="hidden md:hidden fixed top-24 right-4 bg-blue-300 rounded-lg shadow-lg w-64 text-center z-40 p-4">
+  <!-- Close Button -->
+  <button id="close-btn" class="absolute top-4 right-3 text-black text-3xl focus:outline-none">&times;</button>
+
+  <div class="flex flex-col space-y-4 mt-6">
+    <a href="#home" class="text-black text-lg font-semibold hover:text-gray-700">Home</a>
+    <a href="#services" class="text-black text-lg font-semibold hover:text-gray-700">Services</a>
+    <a href="#gallery" class="text-black text-lg font-semibold hover:text-gray-700">Gallery</a>
+    <a href="#" class="text-black text-lg font-semibold hover:text-gray-700">Contact us</a>
+  </div>
+</div>
+
+
+    <!-- main part -->
+    <section
+      class="relative bg-cover bg-center min-h-screen flex items-center justify-center"style="background-image: url('https://img.freepik.com/free-photo/busy-workshop-with-broken-mountain-bicycle-table_613910-20760.jpg');">
+      <div class=" bg-opacity-60 py-10 min-h-screen">
+      <div class=" bg-opacity-60 py-10 min-h-screen">
+
+        <h2 class="text-3xl font-bold mb-6 text-center text-white hover:text-blue-900 cursor-pointer hover:underline">Contact Us</h2>
+
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-4 sm:p-6 rounded-xl  ">
+          <!-- Contact Info -->
+          <div class="space-y-4  mt-6 text-blue-900">
+            <p>📍 <strong>Address:</strong> Kamalnagar(Chautari Road), Chitwan, Nepal</p>
+            <p>📞 <strong>Phone:</strong><a href="tel:+9779845367235" class="hover:underline">+977-9845367235</a></p>
+            <p>📧 <strong>Email:</strong><a href="mailto:ranubikecare@gmail.com" class="hover:underline">ranubikecare@gmail.com</a></p>
+            <p>🕒 <strong>Hours:</strong> Sun–Fri: 9:00 AM – 6:00 PM<br />Closed on Saturday</p>
+
+            <!-- Social Icons -->
+            <div class="flex justify-center md:justify-start gap-8 text-3xl pt-8 pb-8 text-blue-900">
+              <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="hover:text-black"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <a href="tel:+9779845367235" class="block w-40 mx-auto md:mx-0 bg-blue-900 text-white mt-6 py-2 rounded-lg text-center hover:bg-blue-800">Call Now</a>
+          </div>
+
+          <!-- Contact Form Container -->
+      <div class="relative space-y-4">
+        <div id="confirmationPopup" class="absolute inset-0 flex items-center justify-center z-20 hidden">
+      <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center  max-h-60 overflow-auto">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">✅ Booking Successful</h2>
+        <p class="mb-6 text-blue-900 text-xl">Thank you for choosing us! We'll get in touch with you shortly.</p>
+        <button id="okButton" class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800">
+          OK
+        </button>
+      </div>
+    </div>
+
+            <!-- Contact Form -->
+            <form id="contactForm" class="space-y-4" novalidate>
+              <input type="text" placeholder="Name" class="w-full p-3 border rounded-lg" required />
+              <input type="tel" placeholder="Phone Number" pattern="[0-9]{7,15}" class="w-full p-3 border rounded-lg" required />
+              <input type="email" placeholder="E-mail" class="w-full p-3 border rounded-lg" required />
+              <input type="text" placeholder="Bike Brand" class="w-full p-3 border rounded-lg" />
+              <input type="datetime-local" class="w-full p-3 border rounded-lg" />
+              <textarea placeholder="Problem Description" class="w-full p-3 border rounded-lg" required></textarea>
+
+              <button type="button" id="bookNowBtn" disabled
+                class="block w-40 mx-auto md:mx-0 bg-blue-900 text-white text-center py-2 rounded-lg hover:bg-blue-800 disabled:opacity-50 disabled:cursor-not-allowed">
+                Book Now
+              </button>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="max-w-6xl mx-auto px-4 py-10">
+      <h3 class="text-2xl font-bold text-center mb-4 text-blue-900">
+        Find Us on the Map
+      </h3>
+
+      <!-- 16:9 aspect ratio wrapper -->
+      <div class="relative w-full rounded-xl overflow-hidden shadow-lg" style="padding-top:56.25%;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.7327892257113!2d84.4206324!3d27.6946525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb000c81b3dd%3A0x7e3dd66ad58b7426!2sBhanu%20Motocycle%20Recondition%20%26%20Marmat%20Center!5e0!3m2!1sen!2snp!4v1747906419750!5m2!1sen!2snp"
+          class="absolute top-0 left-0 w-full h-full border-0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+<!-- Footer -->
+<footer class="bg-blue-900 text-gray-300 pt-10 pb-6">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-white text-center sm:text-left">
+
+      <!-- Location -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 ml-5">Location</h3>
+        <p class="flex items-start justify-center sm:justify-start gap-2"><i class="fa-solid fa-location-dot text-xl text-red-400"></i>Kamalnagar(Chautari Road), Chitwan, Nepal</p>
+      </div>
+
+      <!-- Working Hours -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 ml-5">Working Hours</h3>
+        <p class="flex items-start justify-center sm:justify-start gap-2"><i class="fa-regular fa-clock text-xl text-red-400"></i>Sunday to Friday, 9:00 AM – 6:00 PM<br>(Closed Saturdays)</p>
+      </div>
+
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 ml-5">Contact Us</h3>
+        <p class="flex items-center justify-center sm:justify-start gap-2 mt-2">
+          <i class="fa-solid fa-phone text-xl text-red-400"></i>
+          <a href="tel:+9779845367235" class="hover:text-gray-100">+977-9845367235</a>
+        </p>
+        <p class="flex items-center justify-center sm:justify-start gap-2 mt-2">
+          <i class="fa-regular fa-envelope text-xl text-red-400"></i>
+          <a href="mailto:ranubikecare@gmail.com" class="hover:text-gray-100">ranubikecare@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="mt-10 flex justify-center space-x-10 text-gray-200">
+      <a href="https://facebook.com/ranubikecare" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition text-2xl"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/ranubikecare" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition text-2xl"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://whatsapp.com/ranubikecare" target="_blank" aria-label="Whatsapp" class="hover:text-green-500 transition text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-400 mt-8 pt-4 text-center">
+      <p class="text-sm text-gray-200">&copy; 2025 Ranu’s Bike Service Centre. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+    
+
+  
+  <script>
+    // Animate loading bar and fade-in content on page load
+    const loadingBar = document.getElementById('loading-bar');
+    const content = document.getElementById('content');
+
+    window.addEventListener('load', () => {
+      let width = 0;
+      const interval = setInterval(() => {
+        width += 2;
+        loadingBar.style.width = width + '%';
+        if (width >= 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            loadingBar.style.display = 'none';
+            content.classList.add('visible');
+          }, 200);
+        }
+      }, 15);
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+    });
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const bookNowBtn = document.getElementById('bookNowBtn');
+      const form = document.getElementById('contactForm');
+      const popup = document.getElementById('confirmationPopup');
+      const okButton = document.getElementById('okButton');
+
+      function validateForm() {
+        const name = form.querySelector('input[placeholder="Name"]');
+        const phone = form.querySelector('input[placeholder="Phone Number"]');
+        const email = form.querySelector('input[placeholder="E-mail"]');
+        const problem = form.querySelector('textarea[placeholder="Problem Description"]');
+
+        const phoneValid = phone.value.trim().match(/^\d{7,15}$/);
+        const emailValid = email.value.trim().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+
+        if (
+          name.value.trim() !== '' &&
+          phoneValid &&
+          emailValid &&
+          problem.value.trim() !== ''
+        ) {
+          bookNowBtn.disabled = false;
+        } else {
+          bookNowBtn.disabled = true;
+        }
+      }
+
+      form.addEventListener('input', validateForm);
+
+      bookNowBtn.addEventListener('click', () => {
+        popup.classList.remove('hidden');
+        form.reset();
+        bookNowBtn.disabled = true;
+      });
+
+      okButton.addEventListener('click', () => {
+        popup.classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+         .slide-in-right {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .slide-in-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+ #content {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  #content.visible {
+    opacity: 1;
+  }
+ 
+  .visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  </style>
+</head>
+<body>
+<!-- Loading Bar -->
+  <div id="loading-bar" class="fixed top-0 left-0 h-0.5 bg-red-500 z-50" style="width: 0%;"></div>
+  <div id="content">
+        <!-- Navigation Bar -->
+      <nav class="bg-blue-900 text-black p-4 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <a href="#" class="text-md text-white font-bold">Bhanu Motorcycle Workshop</a>
+
+          <!-- Hamburger button - visible on small screens -->
+          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+
+          <!-- Desktop menu -->
+          <div id="menu" class="space-x-6 hidden md:flex">
+            <a href="#home" class="text-white text-xl font-semibold hover:text-gray-300">Home</a>
+            <a href="#services" class="text-white text-xl font-semibold hover:text-gray-300">Services</a>
+            <a href="#" class="text-white text-xl font-semibold hover:text-gray-300">Gallery</a>
+            <a href="#contact" class="text-white text-xl font-semibold hover:text-gray-300">Contact us</a>
+          </div>
+        </div>
+      </nav>
+
+          <!-- Mobile Menu - Appears lower from navbar -->
+<div id="mobile-menu" class="hidden md:hidden fixed top-24 right-4 bg-blue-300 rounded-lg shadow-lg w-64 text-center z-40 p-4">
+  <!-- Close Button -->
+  <button id="close-btn" class="absolute top-4 right-3 text-black text-3xl focus:outline-none">&times;</button>
+
+  <div class="flex flex-col space-y-4 mt-6">
+    <a href="#" class="text-black text-lg font-semibold hover:text-gray-700">Home</a>
+    <a href="#services" class="text-black text-lg font-semibold hover:text-gray-700">Services</a>
+    <a href="#gallery" class="text-black text-lg font-semibold hover:text-gray-700">Gallery</a>
+    <a href="#contact" class="text-black text-lg font-semibold hover:text-gray-700">Contact us</a>
+  </div>
+</div>
+
+            <!-- Gallery -->
+      <section id="gallery" class="bg-gray-100 py-10">
+         <div class="container mx-auto px-4 py-8">
+            <h2 id="gallery-heading" class="text-4xl font-bold mb-4 text-center cursor pointer hover:text-blue-900 slide-in-right">
+              Our Workshop Gallery
+            </h2>
+            <p id="gallery-description" class="text-gray-600 mb-6 text-lg text-center cursor pointer hover:text-blue-900 slide-in-right">
+              Glimpses of our workspace, services, and happy riders.
+            </p>
+         </div>
+
+
+        
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-6">
+        <img src="gallery/image8.jpeg" class="w-full aspect-square object-cover  cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(0)">
+        <img src="gallery/image2.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(1)">
+        <img src="gallery/image5.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(2)">
+        <img src="gallery/image10.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(3)">
+        <img src="gallery/image6.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(4)">
+        <img src="gallery/image3.jpeg" class="w-full aspect-square object-cover cursor-pointer  transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(5)">
+        <img src="gallery/image4.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(6)">
+        <img src="gallery/image11.webp" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(7)">
+        <img src="gallery/image12.webp" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(8)">
+        <img src="gallery/image7.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(9)">
+        <img src="gallery/image1.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(10)">
+        <img src="gallery/image9.jpeg" class="w-full aspect-square object-cover cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:brightness-125 hover:shadow-xl hover:z-20  border-2 hover:border-black   rounded-xl  animate-fade-up" style="animation-delay: 0s" onclick="openModal(11)">
+      </div>
+
+
+        
+    </section>
+
+        <!-- Modal -->
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50 flex items-center justify-center">
+  <!-- Modal content wrapper to position close and arrows relative to image -->
+  <div class="relative">
+    
+    <!-- Close Button (just above image) -->
+    <button onclick="closeModal()" class="absolute -top-10 right-0 text-white text-3xl sm:text-4xl">&times;</button>
+
+    <!-- Left Arrow -->
+    <button onclick="prevImage()" class="absolute top-1/2 -left-10 transform -translate-y-1/2 text-white text-3xl sm:text-4xl">&#8592;</button>
+
+    <!-- Centered Image -->
+    <img id="modalImage" class="max-w-[90vw] max-h-[80vh] rounded shadow-lg">
+
+    <!-- Right Arrow -->
+    <button onclick="nextImage()" class="absolute top-1/2 -right-10 transform -translate-y-1/2 text-white text-3xl sm:text-4xl">&#8594;</button>
+  </div>
+</div>
+
+           
+  </div>
+  <!-- Footer -->
+<footer class="bg-blue-900 text-gray-300 pt-10 pb-6">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-white text-center sm:text-left">
+
+      <!-- Location -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 ml-5">Location</h3>
+        <p class="flex items-start justify-center sm:justify-start gap-2"><i class="fa-solid fa-location-dot text-xl text-red-400"></i>Kamalnagar(Chautari Road), Chitwan, Nepal</p>
+      </div>
+
+      <!-- Working Hours -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 ml-5">Working Hours</h3>
+        <p class="flex items-start justify-center sm:justify-start gap-2"><i class="fa-regular fa-clock text-xl text-red-400"></i>Sunday to Friday, 9:00 AM – 6:00 PM<br>(Closed Saturdays)</p>
+      </div>
+
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4 ml-5">Contact Us</h3>
+        <p class="flex items-center justify-center sm:justify-start gap-2 mt-2">
+          <i class="fa-solid fa-phone text-xl text-red-400"></i>
+          <a href="tel:+9779845367235" class="hover:text-gray-100">+977-9845367235</a>
+        </p>
+        <p class="flex items-center justify-center sm:justify-start gap-2 mt-2">
+          <i class="fa-regular fa-envelope text-xl text-red-400"></i>
+          <a href="mailto:ranubikecare@gmail.com" class="hover:text-gray-100">ranubikecare@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="mt-10 flex justify-center space-x-10 text-gray-200">
+      <a href="https://facebook.com/ranubikecare" target="_blank" aria-label="Facebook" class="hover:text-blue-600 transition text-2xl"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com/ranubikecare" target="_blank" aria-label="Instagram" class="hover:text-pink-500 transition text-2xl"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://whatsapp.com/ranubikecare" target="_blank" aria-label="Whatsapp" class="hover:text-green-500 transition text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-400 mt-8 pt-4 text-center">
+      <p class="text-sm text-gray-200">&copy; 2025 Ranu’s Bike Service Centre. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+          // Hamburger Menu Toggle
+     const btn = document.getElementById('menu-btn');
+     const mobileMenu = document.getElementById('mobile-menu');
+     const closeBtn = document.getElementById('close-btn');
+
+     btn.addEventListener('click', () => {
+     mobileMenu.classList.toggle('hidden');
+     });
+
+          closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+          // Loading bar effect
+  let width = 0;
+  const loadingBar = document.getElementById('loading-bar');
+  const content = document.getElementById('content');
+
+  const interval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(interval);
+      content.classList.add('visible'); // Fade in content
+      loadingBar.style.display = 'none'; // Hide loading bar
+      document.querySelectorAll('.service-card').forEach(card => card.classList.add('visible'));
+    } else {
+      width++;
+      loadingBar.style.width = width + '%';
+    }
+  }, 10);
+            const images = [
+    "gallery/image8.jpeg",
+    "gallery/image2.jpeg",
+    "gallery/image5.jpeg",
+    "gallery/image10.jpeg",
+    "gallery/image6.jpeg",
+    "gallery/image3.jpeg",
+    "gallery/image4.jpeg",
+    "gallery/image11.webp",
+    "gallery/image12.webp",
+    "gallery/image7.jpeg",
+    "gallery/image1.jpeg",
+    "gallery/image9.jpeg"
+  ];
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    document.getElementById("modalImage").src = images[currentIndex];
+    document.getElementById("modal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("modal").classList.add("hidden");
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("modalImage").src = images[currentIndex];
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("modalImage").src = images[currentIndex];
+  }
+ window.addEventListener("load", () => {
+      document.getElementById("gallery-heading").classList.add("show");
+      setTimeout(() => {
+        document.getElementById("gallery-description").classList.add("show");
+      }, 200); // Slight delay for staggered effect
+    });
+    
+  </script>
+</body>
+</html>
