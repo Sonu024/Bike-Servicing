@@ -1,7 +1,5 @@
- 
 
-
- // IntersectionObserver for fade-up animation elements
+// IntersectionObserver for fade-up animation elements
   const fadeElements = document.querySelectorAll('.animate-fade-up');
 
   const fadeObserver = new IntersectionObserver(entries => {
